@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Formatter</title>
+
+  </head>
+
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Formatter</title>
+    <style>
+      /* Body style */
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Card box */
+.container {
+  background: #fff;
+  padding: 25px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* Heading */
+h3 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #333;
+  letter-spacing: 1px;
+}
+
+
+label {
+  display: inline-block;
+  margin: 8px 12px;
+  font-size: 16px;
+  color: #444;
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  margin-right: 6px;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+#text {
+  margin-top: 25px;
+  font-size: 20px;
+  padding: 12px 20px;
+  background: #f9fafc;
+  border-radius: 8px;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+
+    </style>
+  </head>
+
+  <body>
+    <center>
+       <label>
+      <h3>CHOSSE THE STYLES</h3>
+      <input type="checkbox" data-style="fontWeight" data-type="bold">BOLD
+      <input type="checkbox" data-style="fontStyle" data-type="italic"> ITALIC
+      <input type="checkbox" data-style="textDecoration" data-type="underline">UNDERLINE
+      <input type="checkbox" data-style="textDecoration" data-type="line-through">STRIKE-THROUGH 
+      <input type="checkbox" data-style="color" data-type="green">CHANGE COLOUR
+      <p id="text">THIS TEXT WILL CHANGE STYLE DYNAMICALLY !</p>
+      </label>
+    </center>
+    <script>
+      let text = document.getElementById("text")
+      let ischeckboxes = document.querySelectorAll("input[type = checkbox ]")
+      ischeckboxes.forEach(cb => {
+        cb.addEventListener("change",()=>{
+          let style = cb.dataset.style
+          let value = cb.dataset.type
+          if(cb.checked){
+            text.style[style]=value
+          }
+          else{
+            text.style[style]="unset"
+          }
+        })
+      })
+    </script>
+
+  </body>
+
+  </html>
+
+
+
+
+
+
+</body>
+
+
+</body>
+
+</html>
+
+
+</body>
+
+</html>
