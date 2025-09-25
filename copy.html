@@ -91,12 +91,14 @@ input[type="checkbox"] {
       <input type="checkbox" data-style="textDecoration" data-type="underline">UNDERLINE
       <input type="checkbox" data-style="textDecoration" data-type="line-through">STRIKE-THROUGH 
       <input type="checkbox" data-style="color" data-type="green">CHANGE COLOUR
+      <button id="resetbtn">reset</button>
       <p id="text">THIS TEXT WILL CHANGE STYLE DYNAMICALLY !</p>
       </label>
     </center>
     <script>
       let text = document.getElementById("text")
       let ischeckboxes = document.querySelectorAll("input[type = checkbox ]")
+      let btn = document.getElementById("resetbtn")
       ischeckboxes.forEach(cb => {
         cb.addEventListener("change",()=>{
           let style = cb.dataset.style
@@ -108,6 +110,13 @@ input[type="checkbox"] {
             text.style[style]="unset"
           }
         })
+      });
+      btn.addEventListener("click",()=>{
+        ischeckboxes.forEach(c => c.checked = false)
+        text.style.fontWeight="unset"
+        text.style.fontStyle="unset"
+        text.style.textDecoration="unset"
+        text.style.color="unset"
       })
     </script>
 
