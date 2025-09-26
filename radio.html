@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+   
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Text Styler</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    h2 {
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    .controls {
+      background: #fff;
+      padding: 15px 20px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-size: 14px;
+      color: #444;
+      cursor: pointer;
+    }
+
+    input[type="radio"] {
+      margin-right: 6px;
+      transform: scale(1.2);
+      cursor: pointer;
+    }
+
+    #text {
+      font-size: 20px;
+      font-weight: normal;
+      color: black;
+      transition: all 0.3s ease-in-out;
+      padding: 10px 15px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Choose a Text Style</h2>
+
+  <div class="controls">
+    <label><input type="radio" name="style" data-style="fontWeight" data-type="bold"> Bold</label>
+    <label><input type="radio" name="style" data-style="fontStyle" data-type="italic"> Italic</label>
+    <label><input type="radio" name="style" data-style="textDecoration" data-type="underline"> Underline</label>
+    <label><input type="radio" name="style" data-style="textDecoration" data-type="line-through"> Strike-through</label>
+    <label><input type="radio" name="style" value="reset"> Reset</label>
+  </div>
+
+  <p id="text">This text will change style dynamically!</p>
+
+  <script>
+    let text = document.getElementById("text");
+    let isradio = document.querySelectorAll("input[type=radio]");
+
+    isradio.forEach(rb => {
+      rb.addEventListener("change", () => {
+        text.style.fontWeight = "unset";
+        text.style.fontStyle = "unset";
+        text.style.textDecoration = "unset";
+        text.style.color = "unset";
+
+        let style = rb.dataset.style;
+        let value = rb.dataset.type;
+        if (style && value) {
+          text.style[style] = value;
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
+
+
+</html>
