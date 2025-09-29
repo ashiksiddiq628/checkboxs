@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let outerfunction = () => {
+            let count = 0
+
+            let innerfunction = () => {
+                count = count + 1
+                console.log("count:" + count)
+            }
+            let resetfunction = () => {
+                let start = 0
+                count = count - 1
+                console.log("reset:" + start)
+            }
+            return { innerfunction, resetfunction }
+        }
+        let counter = outerfunction()
+        counter.innerfunction()
+        counter.innerfunction()
+        counter.resetfunction()
+        counter.innerfunction()
+
+     let doublemanipulater = (x)=>{
+        return (y)=>{
+            return x*y
+     }
+        }
+    
+     let mutiple = doublemanipulater(10)
+     console.log(mutiple(6))
+     let mutiple1 = doublemanipulater(2)
+     console.log(mutiple1(6))
+    </script>
+
+</body>
+
+
+</body>
+
+</html>
