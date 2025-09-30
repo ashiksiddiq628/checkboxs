@@ -8,38 +8,34 @@
 </head>
 
 <body>
-    <script>
-        let outerfunction = () => {
-            let count = 0
-
-            let innerfunction = () => {
-                count = count + 1
-                console.log("count:" + count)
-            }
-            let resetfunction = () => {
-                let start = 0
-                count = count - 1
-                console.log("reset:" + start)
-            }
-            return { innerfunction, resetfunction }
+  <script>
+    let createaccount = (intialzation) =>{
+      let balance = intialzation
+      return{
+        deposit : (amount) => {
+          balance += amount 
+          return "balance:"+balance
+        },
+        withdraw:(amount) => {
+          if (amount > balance ){
+            return "insufficient blance:"+balance
+          };
+          balance -= amount  
+          return "balance:"+balance
+        },
+        checkbalance : ()=>{
+          return "balance:" +balance
         }
-        let counter = outerfunction()
-        counter.innerfunction()
-        counter.innerfunction()
-        counter.resetfunction()
-        counter.innerfunction()
+      };
+    }
+    let account = createaccount(1000)
+    console.log(account.deposit(300))
+    console.log(account.withdraw(400))
+    console.log(account.checkbalance())
+    console.log(account.withdraw(3000))
 
-     let doublemanipulater = (x)=>{
-        return (y)=>{
-            return x*y
-     }
-        }
-    
-     let mutiple = doublemanipulater(10)
-     console.log(mutiple(6))
-     let mutiple1 = doublemanipulater(2)
-     console.log(mutiple1(6))
-    </script>
+  </script>
+   
 
 </body>
 
