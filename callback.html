@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- Data store, transfer, API calls, localStorage → JSON use panlaam. -->
+  <script>
+    let add = (x, y) => {
+      return x + y
+    };
+    let sub = (x, y) => {
+      return x - y
+    };
+    let multi = (x, y) => {
+      return x * y
+    }
+    let cb = (a, b, callback) => {
+      return callback(a, b)
+    }
+    console.log(cb(5, 6, add))
+    console.log(cb(4, 6, sub))
+    let sendmessage = (message, callback) => {
+      console.log("message send in:" + message)
+      callback()
+    };
+    let replaymessage = () => {
+      console.log("replay messge:seri da meet pannalam ")
+    };
+
+    sendmessage("hello broh", replaymessage)
+
+
+    let divide = (x, y) => {
+      return x / y
+    };
+    let totaldivide = (a, b, callback) => {
+      return callback(a, b)
+
+    };
+    setTimeout(() => {
+      console.log(totaldivide(20, 5, divide))
+      console.log(totaldivide(10, 2, divide))
+    }, 2000)
+
+    let sendmessage1 = (message, callback) => {
+      console.log("message send in: " + message)
+      callback()
+    };
+    let replaymsg1 = () => {
+      console.log("replay message in: hi nice to meet you")
+    }
+    let replaymsg2 = () => {
+      console.log("replay message in: iam busy in work later  im calling you ")
+
+    };
+    sendmessage1("hi good morning ", replaymsg1)
+    sendmessage1("hello mohamed ", replaymsg2)
+
+    let numbers = [1, 2, 3, 4, 5, 6]
+    numbers.forEach((num)=>{
+      console.log(num)
+    });
+    let evennumber = [1,2,3,4,5,6,7,8]
+    evennumber.forEach((num)=>{
+      if(num %2 === 0 ){
+        console.log("even number:",num)
+      }
+    });
+    let fruites = ["apple","orange","banana"]
+    fruites.forEach((fruit,index)=>{
+      console.log("index:",index,"fruit:",fruit)
+    });
+    let orders = ["coffe","milkshake","biscut","lemon juice"]
+    orders.forEach((item,index)=>{
+      console.log("order :"+(index + 1)+":"+item)
+       })
+      let cart = [100,200,300,700]
+      let total = 0
+      cart.forEach((price)=> {
+       total += price
+        console.log("total price:"+total)
+         })
+        
+   
+     
+     
+     
+
+
+
+  </script>
+
+</body>
+
+</html>
