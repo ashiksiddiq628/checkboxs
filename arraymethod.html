@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //    Map
+        let order = [
+            { customer: "mohamed", item: "coffe", price: 50 },
+            { customer: "sara", item: "juice", price: 80 },
+            { customer: "john", item: "milkshake", price: 180 },
+            { customer: "pretthi", item: "butter milk", price: 250 },
+        ];
+        let finalbil = order.map((orders, index) => {
+            let gst = orders.price * 0.1
+            let total = orders.price + gst
+            return (
+                "order 1" + (index + 1) +
+                ":" + orders.customer +
+                "oredered: :" + orders.item +
+                "final bil: $" + total
+            )
+        });
+        let stringfy = JSON.stringify(finalbil)
+        console.log(stringfy)
+        let parse = JSON.parse(stringfy)
+        console.log(parse)
+        let students = [
+            { name: "ali", marks: 30 },
+            { name: "sara", marks: 80 },
+            { name: "mohamed", marks: 45 },
+            { name: "althaf", marks: 100 },
+
+        ];
+        let totalmarks = students.map((student, m) => {
+        let status = student.marks >= 50 ? "pass" : "fail"
+
+            return (
+
+                "students #" + (m + 1) +
+                ":" + student.name +
+                ":scored:" + student.marks +
+                ":" + status
+            );
+
+        });
+        console.log(totalmarks)
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
